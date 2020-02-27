@@ -231,14 +231,19 @@ betas<-data.frame(df2)
 identical((colnames(betas),as.character(pheno$sentrixFull))
 
 ###-------------------------------------------------------------------------------------------------------------------
-### CET??? 
+### CET
 ###-------------------------------------------------------------------------------------------------------------------
 
+load("CETS_Image.RData")
 
+refProfile <- getReference(brain, modelIdx)
+head(refProfile)
+prop <- estProportion(dilution, profile = refProfile)
 
-
-
-
+prop<- as.data.frame(estProportion(betas.dasen, profile = refProfile))
+colnames(prop)<-"cellprop"
+pheno<- merge(pheno, prop, by="row.names")
+rownames(pheno)<-[,1]
 
 ###-------------------------------------------------------------------------------------------------------------------
 ### harmonisation: regressing out the effects of age and sex in all samples in each cohort and tissue separately, with neuron/glia proportions included as an additional covariate in cortical regions
