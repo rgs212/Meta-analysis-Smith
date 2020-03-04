@@ -9,3 +9,31 @@
 Epigenome-wide association studies of Alzheimer’s disease have highlighted neuropathology-associated DNA methylation differences, although existing studies have been limited in sample size and utilized different brain regions. Here, we combine data from six methylomic studies of Alzheimer’s disease (N=1,453 unique individuals) to identify differential methylation associated with Braak stage in different brain regions and across cortex. At an experiment-wide significance threshold (P < 1.238 x 10<sup>−7</sup>) we identified 236 CpGs in the prefrontal cortex, 95 CpGs in the temporal gyrus and ten CpGs in the entorhinal cortex, with none in the cerebellum. Our cross-cortex meta-analysis (N=1,408 donors) identified 220 CpGs associated with neuropathology, annotated to 121 genes, of which 96 genes had not been previously reported at experiment-wide significance. Polyepigenic scores derived from these 220 CpGs explain 24.7% of neuropathological variance, whilst polygenic scores accounted for 20.2% of variance in these samples. The meta-analysis summary statistics are available in our online data resource (www.epigenomicslab.com/ad-meta-analysis/).
 
 Paper uploaded to Biorxiv (https://www.biorxiv.org/content/10.1101/2020.02.28.957894v1)/
+
+This page contains scripts for the above paper
+1. Data quality control and harmonization.r - QC and harmonization for all samples included in analysis
+   - Loading the raw idat files
+   - Quality control
+      - Detecting samples with extreme intesities using the negative control probes as references
+      - Detecting samples with low background to signal ratio
+      - detecting the samples with the extreme mean intensity of methylated or unmethylated signals 
+      - Detecting the samples with bisulfite conversion efficiency < 80%
+      - Detecting a mismatch between reported and predicted sex
+      - Uses SNP probes on the array to find genetic correlations between samples
+   - WateRmelon - pfilter
+   - Quantile normalization
+   - Removing the probes with evidence for cross-hybridizition
+   - CET
+   - Harmonisation
+   - Surrogate variables (SVs)armonisation
+   
+2. Main Analyses.r - All analyses used
+   - Linear regression analyses were performed with respect to Braak stage
+   - Intra-tissue meta-analysis
+   - Fixed-effect inverse variance meta-analysis
+   - Cross-cortex AD-associated DMPs
+   - Comb-p
+   - AD GWAS enrichment analysis
+   - GO enrichment analysis
+   - Quantifying variance explained by PES and PRS
+   - Developing a classifier to predict Braak pathology
