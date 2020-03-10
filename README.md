@@ -38,7 +38,7 @@ This page contains scripts for the above paper
    - Quantifying variance explained by PES and PRS
    - Developing a classifier to predict Braak pathology
 
-<p>Statistical analysis was performed in R 3.5.2 and Bioconductor 3.8, Python and PLINK 1.9. </p>
+<p>Statistical analysis was performed in R 3.5.2 and Bioconductor 3.8, Python and PLINK 1.9. 
 <br>R Packages used were wateRmelon 1.26.0, minfi 1.28.4, CETS, sva 3.30.1, Meta 4.10.0, nlme 3.1.142, bacon 1.10.1, pROC 1.16.1, glmnet 2.0-18, PRSice 2.2.12. 
 <br>Python package comb-p 33.1.1.</p>
 
