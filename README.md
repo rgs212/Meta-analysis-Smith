@@ -47,3 +47,6 @@ This page contains scripts for the above paper
 <br>CPE OS Name: cpe:/o:centos:centos:7
 <br>Kernel: Linux 3.10.0-693.17.1.el7.x86_64
 <br>Architecture: x86-64</p>
+
+<p>Installation depends on connection and system, however will install within two hours.</p>
+<p>Run time for all analysis processes will be several hours</p>
